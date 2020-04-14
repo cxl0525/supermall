@@ -7,7 +7,7 @@
       </slot>
       <div class="indicator">
         <slot name="indicator" v-if="showIndicator && slideCount>1">
-          <div v-for="(item, index) in slideCount" class="indi-item" :class="{active: index === currentIndex-1}" :key="index"></div>
+          <div v-for="(item, index) in slideCount" class="indi-item" :class="{active: index === currentIndex-1}" :key="index.id"></div>
         </slot>
       </div>
     </div>
@@ -50,7 +50,7 @@
 
         // 2.开启定时器
         this.startTimer();
-      }, 1000)
+      }, 100)
     },
     methods: {
 		  /**
